@@ -1,0 +1,20 @@
+syntax = "proto3";
+
+package question_pdb;
+
+message Question {
+  string question_text = 1;
+}
+
+message QuestionListRequest {
+  int32 question_version  = 1;
+}
+
+message QuestionListResponse {
+  repeated Question questions = 1;
+}
+
+service QuestionService {
+  rpc ListQuestion (QuestionListRequest) returns (QuestionListResponse);
+}
+
