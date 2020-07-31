@@ -1,4 +1,4 @@
-package main
+package server
 
 import (
 	"fmt"
@@ -25,7 +25,7 @@ func (*server) ListQuestion(ctx context.Context, req *question_pdb.QuestionListR
 	return &res, nil
 }
 
-func main() {
+func Run() {
 	fmt.Println("Server Start")
 
 	lis, err := net.Listen("tcp", "0.0.0.0:50051")
